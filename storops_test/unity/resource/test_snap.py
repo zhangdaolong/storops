@@ -61,15 +61,16 @@ class UnitySnapTest(TestCase):
     @patch_rest
     def test_get_all(self):
         snaps = UnitySnapList(cli=t_rest())
+        assert_that(snaps[0].existed, equal_to(True))
         assert_that(len(snaps), equal_to(3))
 
     @patch_rest
     def test_create_snap_success(self):
         snap = UnitySnap(_id='171798691884', cli=t_rest())
         sos = snap.create_snap(name='snap_over_snap')
-        assert_that(sos.existed, equal_to(True))
-        assert_that(sos.storage_resource, equal_to(snap.storage_resource))
+        print(repr(sos))
         assert_that(sos.name, equal_to('snap_over_snap'))
+        assert_that(sos.existed, equal_to(True))
 
     @patch_rest
     def test_delete_snap(self):

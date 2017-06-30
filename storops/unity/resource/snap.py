@@ -67,18 +67,8 @@ class UnitySnap(UnityResource):
             self._cli, snap=self, name=name, path=path,
             is_read_only=is_read_only, default_access=default_access)
 
-    def create_snap(self, name=None,
-                    description=None, is_auto_delete=None,
-                    retention_duration=None, is_read_only=None,
-                    fs_access_type=None):
-        return self.create(cli=self._cli,
-                           storage_resource=self.storage_resource,
-                           name=name,
-                           description=description,
-                           is_auto_delete=is_auto_delete,
-                           retention_duration=retention_duration,
-                           is_read_only=is_read_only,
-                           fs_access_type=fs_access_type)
+    def create_snap(self, name):
+        return self.copy(copy_name=name)
 
     def copy(self, copy_name=None):
         resp = self.action('copy', copyName=copy_name)

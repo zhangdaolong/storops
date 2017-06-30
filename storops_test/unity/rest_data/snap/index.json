@@ -37,6 +37,10 @@
       "response": "171798691953.json"
     },
     {
+      "url": "/api/instances/snap/171798691954?compact=True&fields=accessType,attachedWWN,creationTime,creatorSchedule,creatorType,creatorUser,description,expirationTime,id,instanceId,ioLimitPolicy,isAutoDelete,isModifiable,isModified,isReadOnly,isSystemSnap,lastWritableTime,lun,name,operationalStatus,parentSnap,size,snapGroup,state,storageResource",
+      "response": "171798691954.json"
+    },
+    {
       "url": "/api/instances/snap/12345?compact=True&fields=accessType,attachedWWN,creationTime,creatorSchedule,creatorType,creatorUser,description,expirationTime,id,instanceId,ioLimitPolicy,isAutoDelete,isModifiable,isModified,isReadOnly,isSystemSnap,lastWritableTime,lun,name,operationalStatus,parentSnap,size,snapGroup,state,storageResource",
       "response": "not_found.json"
     },
@@ -96,6 +100,13 @@
         }
       },
       "response": "create_171798691884.json"
+    },
+    {
+      "url": "/api/instances/snap/171798691884/action/copy?compact=True",
+      "body": {
+        "copyName": "snap_over_snap"
+      },
+      "response": "copy_171798691884.json"
     },
     {
       "url": "/api/types/snap/instances?compact=True",
