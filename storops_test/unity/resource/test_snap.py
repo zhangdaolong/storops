@@ -68,7 +68,6 @@ class UnitySnapTest(TestCase):
     def test_create_snap_success(self):
         snap = UnitySnap(_id='171798691884', cli=t_rest())
         sos = snap.create_snap(name='snap_over_snap')
-        print(repr(sos))
         assert_that(sos.name, equal_to('snap_over_snap'))
         assert_that(sos.existed, equal_to(True))
 
